@@ -78,11 +78,9 @@ CREATE INDEX idx_ledger_party ON ledger_entries(party_id, date DESC);
 CREATE INDEX idx_parties_user ON parties(user_id);
 CREATE INDEX idx_categories_user ON expense_categories(user_id);
 
--- Seed default admin user (password: admin123 - CHANGE THIS)
--- Password hash for 'admin123' using bcrypt
 -- You'll set the actual password via the app or update this hash
 INSERT INTO users (username, password_hash, display_name)
-VALUES ('admin', '$2b$12$LJ3m4ys3Lk0TSwMCfNBphuMaDhBxROOBMgGhVQOjNYXR9xIxCQLmC', 'Admin');
+VALUES ('admin', '$2a$12$GnN7spwpMhkuRDluqvDSEOQBD.OenUraAQwjWVtTrTQlER/GH7HEm', 'Admin');
 
 -- Seed default expense categories for the admin user
 INSERT INTO expense_categories (user_id, name, name_lower)
